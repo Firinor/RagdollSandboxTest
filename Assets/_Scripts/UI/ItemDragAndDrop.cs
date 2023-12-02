@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
 public class ItemDragAndDrop : Selectable, IDragHandler
 {
     [SerializeField]
     private GameObject prefab;
 
     private GameObject item;
-    private static float maxDistance = 5f;
-    //private Image image;
+    private static float maxDistance = 15f;
+    private static float nearDistance = 5f;// maxDistance / 3;
+    private CanvasGroup canvasGroup;
 
-    //protected override void Awake()
-    //{
-    //    image = GetComponent<Image>();
-    //}
-
+    protected override void Awake()
+    {
+        base.Awake();
+        canvasGroup = GetComponentInParent<CanvasGroup>();
+        if (canvasGroup == null)
+            throw new System.Exception("Couldn't find the required component in the parents!");
+    }
 
     public override void OnPointerDown(PointerEventData eventData) 
     {
-        image.raycastTarget = false;
+        canvasGroup.blocksRaycasts = false;
         if (item == null)
         {
             item = Instantiate(prefab);
@@ -58,12 +58,12 @@ public class ItemDragAndDrop : Selectable, IDragHandler
         }
         else
         {
-            item.transform.position = ray.origin + ray.direction * maxDistance;
+            item.transform.position = ray.origin + ray.direction * nearDistance;
         }
     }
     public override void OnPointerUp(PointerEventData eventData) 
     {
-        image.raycastTarget = true;
+        canvasGroup.blocksRaycasts = true;
 
         if (item == null)
             return;
@@ -75,6 +75,8 @@ public class ItemDragAndDrop : Selectable, IDragHandler
         }
 
         //Release item
+        var start = item.GetComponent<SetObjectToStart>();
+        start.enabled = true;
         item = null;
     }
 
