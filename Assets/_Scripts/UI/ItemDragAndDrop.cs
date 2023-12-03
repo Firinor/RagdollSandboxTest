@@ -49,7 +49,7 @@ public class ItemDragAndDrop : Selectable, IDragHandler
                 ray, 
                 out RaycastHit raycastHit, 
                 maxDistance, 
-                layerMask: LayerMask.GetMask("Default", "TransparentFX", "CollisionObjects")
+                layerMask: LayerMask.GetMask("Default", "ImmovableObjects", "CollisionObjects")
                 );
 
         if(isHit)
