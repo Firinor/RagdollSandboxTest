@@ -1632,7 +1632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8571838861763270591}
+  - {fileID: 6316033619309516231}
   - {fileID: 5200951513296058719}
   m_Father: {fileID: 8887404306817653171}
   m_RootOrder: 2
@@ -4625,7 +4625,7 @@ MonoBehaviour:
   spherecastRadius: 0.1
   groundLayers:
     serializedVersion: 2
-    m_Bits: 18
+    m_Bits: 321
   characterAnimation: {fileID: 7323427636954137540}
   userControl: {fileID: 2486458774493824360}
   cam: {fileID: 0}
@@ -5091,7 +5091,7 @@ Transform:
   - {fileID: 4520017362811308145}
   - {fileID: 5670373002762475526}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8572601522391616126
 GameObject:
@@ -5765,10 +5765,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11446532, guid: 1549100322cdb4b80b441323f4142fce, type: 3}
-      propertyPath: transitionDuration
-      value: 0.7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5824,7 +5820,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdc15cb97660141638eaeea7afbe7591, type: 3}
---- !u!4 &8571838861763270591 stripped
+--- !u!4 &6316033619309516231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 444240, guid: bdc15cb97660141638eaeea7afbe7591, type: 3}
   m_PrefabInstance: {fileID: 6316033619309138583}

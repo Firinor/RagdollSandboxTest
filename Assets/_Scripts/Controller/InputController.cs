@@ -7,7 +7,7 @@ public class InputController : MonoBehaviour, IPointerDownHandler, IDragHandler,
     private IControllable controllable;
 
     [SerializeField]
-    private ConfigurableJoint configurableJoint;
+    private Joint configurableJoint;
     private float targetDistance;
 
     private Camera cam;
